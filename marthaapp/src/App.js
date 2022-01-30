@@ -1,10 +1,10 @@
 import React from 'react';
 import {ClassComp, ClassComp1} from './Components/ClassComp';
-//import logo from './logo.svg';
-//import './App.css';
-import FC from './Components/FunctionalComp'; //I can rename my export component name
+import FC from './Components/FunctionalComp'; 
+//I can rename my export component name
 import Click from "./Components/Click";
 import Counter from './Components/Counter';
+import ParentComp from './Components/ParentComp';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
       <ClassComp1 />
       <Click />
       <Counter />
+      <ParentComp />
     </div>
   );
 }
