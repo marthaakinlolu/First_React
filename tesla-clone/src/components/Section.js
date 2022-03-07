@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 
 function Section({ title, description, leftBtnText, rightBtnText, backgroundImg }) {
@@ -20,8 +21,8 @@ function Section({ title, description, leftBtnText, rightBtnText, backgroundImg 
                     {rightBtnText}
                 </RightButton>
             }
-          <DownArrow src="/public/images/images/down-arrow.svg" />
           </ButtonGroup>
+          <DownArrow  />
         </Button>
           
     </Wrap>
@@ -73,7 +74,7 @@ const RightButton = styled(LeftButton)`
     opacity: 0.65;
     color: black;
 `
-const DownArrow = styled.img`
+const DownArrow = styled(KeyboardArrowDownIcon)`
     height: 40px;
     overflow-x: hidden;
     animation: animateDown infinite 1.5s;
