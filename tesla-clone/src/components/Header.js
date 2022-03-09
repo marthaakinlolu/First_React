@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from "styled-components"
 import MenuIcon from '@mui/icons-material/Menu';
-import { style } from '@mui/system';
+import CloseIcon from '@mui/icons-material/Close';
 
 function Header() {
+  const [burgerStatus, setBurgerStatus] = useState(false);
   return (
     <Container>
         <a> 
@@ -20,9 +21,12 @@ function Header() {
         <RightMenu>
           <a href='#'>Shop</a>
           <a href='#'>Telsa Clone</a>
-          <CustomMenu />
+          <CustomMenu onClick={()=> setBurgerStatus(true)} />
         </RightMenu>
-        <BurgerNav>
+        <BurgerNav show={burgerStatus}>
+            <CLoseWrapper>
+                <CustomClose onClick={()=> setBurgerStatus(false)}/>
+            </CLoseWrapper>
             <li><a href='#'>Existing Inventory</a></li>
             <li><a href='#'>Used Inventory</a></li>
             <li><a href='#'>Trade-in</a></li>
@@ -93,11 +97,25 @@ const BurgerNav = styled.div`
     z-index:16;
     list-style: none;
     padding:20px;
+    display: flex;
+    flex-direction: column;
     text-align: start;
+    transform: ${props => props.show ? 'translateX(0)': 'translate(100%)'};
+    transition: transform 0.2s;
     li {
       padding: 15px;
       border-bottom: 1px solid rgba(0, 0, 0, .2);
-    }
 
-    
+      a {
+          font-weight: 600;
+      }
+
+    }  
+`
+const CustomClose = styled(CloseIcon)`
+    cursor: pointer;
+`
+const CLoseWrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
 `

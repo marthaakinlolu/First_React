@@ -39,8 +39,8 @@ const Wrap = styled.div`
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; // vertical
-    align-items: center; // horizontal
+    justify-content: space-between;
+    align-items: center;
     background-image: ${props => `url('/images/images/${props.bgImage}')`}
   `
 const ItemText = styled.div`
