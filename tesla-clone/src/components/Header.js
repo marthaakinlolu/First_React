@@ -26,12 +26,13 @@ function Header() {
           <a href='#'>Telsa Clone</a>
           <CustomMenu onClick={()=> setBurgerStatus(true)} />
         </RightMenu>
+        
         <BurgerNav show={burgerStatus}>
             <CLoseWrapper>
                 <CustomClose onClick={()=> setBurgerStatus(false)}/>
             </CLoseWrapper>
             {cars && cars.map((car, index)=>(
-                <li key={index} href="#">{car}</li>
+                 <li><a href='#'>{car}</a></li>
             ))}
             <li><a href='#'>Existing Inventory</a></li>
             <li><a href='#'>Used Inventory</a></li>
