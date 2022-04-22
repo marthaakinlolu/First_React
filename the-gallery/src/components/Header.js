@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -8,7 +9,7 @@ function Header() {
         
     <img src={require('../images/logo.jfif')} width={60} height={60} alt='gallery'/>
     <Nav>
-        <button>Create</button>
+        <Link className="link active" to="/createpage">Create Page</Link>  
     </Nav>
 
 </Container>
